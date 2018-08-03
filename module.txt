@@ -1,0 +1,18 @@
+{
+    "id" : "KComputersSignalling",
+    "version" : "0.1.0-SNAPSHOT",
+    "author" : "Adrian Siekierka <kontakt@asie.pl>",
+    "displayName" : "KComputers - Signalling",
+    "description" : "Adds a Signal Transceiver, capable of receiving and transmitting Signalling signals",
+    "dependencies" : [
+        {
+            "id": "KComputers",
+            "minVersion": "0.1.0-SNAPSHOT"
+        },
+        {
+            "id": "Signalling",
+            "minVersion": "0.1.1-SNAPSHOT"
+        }
+    ],
+    "serverSideOnly" : false
+}

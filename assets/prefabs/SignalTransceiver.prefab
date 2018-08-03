@@ -1,0 +1,14 @@
+{
+    "SignalProducer": {
+        "connectionSides": 63,
+        "signalStrength": 0
+    },
+    "SignalConsumer": {
+        "connectionSides": 63,
+        "mode": "SPECIAL"
+    },
+    "SignalConsumerAdvancedStatus": {
+    },
+    "KallistiSignalTransceiver": {},
+    "KallistiConnectable": {}
+}

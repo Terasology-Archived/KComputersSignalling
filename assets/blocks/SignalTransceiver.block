@@ -1,0 +1,15 @@
+{
+    "categories": [
+        "metal"
+    ],
+    "attachmentAllowed": false,
+    "tiles": {
+        "sides": "SignalTransceiver",
+        "front": "SignalTransceiver",
+        "topBottom": "SignalTransceiver"
+    },
+    "entity": {
+        "prefab": "KComputersSignalling:SignalTransceiver",
+        "keepActive": true
+    }
+}
