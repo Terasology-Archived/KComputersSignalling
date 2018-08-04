@@ -20,6 +20,7 @@ import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.kallisti.base.component.ComponentMethod;
 import org.terasology.kallisti.base.component.Peripheral;
 import org.terasology.kcomputers.KComputersUtil;
+import org.terasology.math.Side;
 import org.terasology.signalling.components.SignalConsumerAdvancedStatusComponent;
 import org.terasology.signalling.components.SignalConsumerStatusComponent;
 import org.terasology.signalling.components.SignalProducerComponent;
@@ -38,7 +39,12 @@ public class PeripheralSignalTransceiver implements Peripheral {
         if (self.hasComponent(SignalConsumerAdvancedStatusComponent.class) && self.hasComponent(BlockComponent.class)) {
             SignalConsumerAdvancedStatusComponent component = self.getComponent(SignalConsumerAdvancedStatusComponent.class);
 
-            String name = BlockNetworkUtil.getResultSide(self.getComponent(BlockComponent.class).getBlock(), KComputersUtil.getOCSide(side.intValue())).name();
+            Side sideT = KComputersUtil.getOCSide(side.intValue());
+            if (sideT == null) {
+                return 0;
+            }
+
+            String name = BlockNetworkUtil.getResultSide(self.getComponent(BlockComponent.class).getBlock(), sideT).name();
             return component.signalStrengths.getOrDefault(name, 0);
         } else if (self.hasComponent(SignalConsumerStatusComponent.class)) {
             return self.getComponent(SignalConsumerStatusComponent.class).hasSignal ? 1 : 0;
